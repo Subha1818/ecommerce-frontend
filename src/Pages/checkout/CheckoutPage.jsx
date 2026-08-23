@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { CheckoutHeader } from './CheckoutHeader';
 import { OrderSummary } from './OrderSummary';
 import { PaymentSummary } from './PaymentSummary';
-import './checkout-header.css';
+import './Checkout-header.css';
 import './CheckoutPage.css';
 
 
