@@ -1,4 +1,5 @@
-import axios from 'axios';
+//import axios from 'axios';
+import api from '../../api';
 import { useState, useEffect, Fragment } from 'react';
 import dayjs from 'dayjs';
 
@@ -16,7 +17,7 @@ export function OrdersPage( {cart, loadCart}){
 
     useEffect(()=>{
         const fetchOrderData = async() =>{
-            const response = await axios.get('/api/orders?expand=products');
+            const response = await api.get('/api/orders?expand=products');
                 setOrders(response.data);
         }
 
@@ -24,7 +25,7 @@ export function OrdersPage( {cart, loadCart}){
     },[]);
 
     const addToCart = async (orderProduct) => {
-    await axios.post('/api/cart-items', {
+    await api.post('/api/cart-items', {
         productId: orderProduct.product.id,
         quantity: orderProduct.quantity
     });
